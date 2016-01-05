@@ -7,8 +7,9 @@ open FSharp.Data.Sql
 
 type Sql = 
     SqlDataProvider< 
-        "Server=(LocalDb)\\v11.0;Database=FreyaMusicStore;Trusted_Connection=True;MultipleActiveResultSets=true", 
+        "Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=FreyaMusicStore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False", 
         DatabaseVendor=Common.DatabaseProviderTypes.MSSQLSERVER >
+
 
 type DbContext = Sql.dataContext
 type Album = DbContext.``[dbo].[Albums]Entity``
